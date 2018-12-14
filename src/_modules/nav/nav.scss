@@ -1,0 +1,15 @@
+// nav styles
+
+.botonera{
+    background-color: pink;
+    display: flex;
+
+    &-item{
+        flex-grow: 1;}
+    &-link{
+        color:#333;
+        &:hover{
+            color:orange;
+        }
+    }
+}

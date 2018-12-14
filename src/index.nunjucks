@@ -1,0 +1,34 @@
+{% extends '_layouts/base.nunjucks' %}
+
+{% import "_modules/link/link.nunjucks" as link %}
+{% import "_modules/nav/nav.nunjucks" as nav %}
+
+{% block content %}
+<div class="main-container">
+  <div class="yeogurt-info">
+  {{nav.content()}}
+    <h1>Welcome to Yeogurt!</h1>
+    <p>
+      Take a look at the {{link.content({
+        href: 'https://github.com/larsonjj/generator-yeogurt#yeogurt-generator---',
+        text: 'documentation'
+      })}} and start mixing up something awesome.
+    </p>
+
+    <ul> 
+        {% for val in site.data.ejemplo.paises.pais %}
+          <li>
+				  {% if val.poblacion > 60000000 %}
+				  <li style="background: green;">
+				  {% else %}
+				  <li>
+           		{% endif %}
+           
+            {{ val.nombre }} - {{val.poblacion}}</li>
+          <img src="../images/{{val.bandera}}" alt="">
+        {% endfor %}
+        </ul>
+        
+  </div>
+</div>
+{% endblock %}
